@@ -1,0 +1,50 @@
+plugins {
+    id 'org.jetbrains.kotlin.jvm' version '1.5.31'
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    mavenCentral()
+}
+//val exposedVersion: String by project
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib"
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+
+    implementation("org.jetbrains.exposed:exposed-core:0.34.1")
+    implementation("org.jetbrains.exposed:exposed-dao:0.34.1")
+    implementation("org.jetbrains.exposed:exposed-jdbc:0.34.1")
+    implementation("org.jetbrains.exposed:exposed-java-time:0.30.1")
+
+    implementation "com.microsoft.sqlserver:mssql-jdbc:7.4.1.jre8"
+
+    //ABOUT Apache ORC
+    //For more detail visit: https://www.javahelps.com/2020/08/read-and-write-orc-files-in-core-java.html
+
+    // https://mvnrepository.com/artifact/org.apache.orc/orc-core
+    implementation("org.apache.orc:orc-core:1.7.0")
+
+    // https://mvnrepository.com/artifact/org.apache.orc/orc-tools
+    implementation("org.apache.orc:orc-tools:1.7.0")
+
+    // https://mvnrepository.com/artifact/org.apache.orc/orc-mapreduce
+    implementation("org.apache.orc:orc-mapreduce:1.7.0")
+
+    // https://mvnrepository.com/artifact/org.apache.hadoop/hadoop-common
+    implementation("org.apache.hadoop:hadoop-common:3.3.0")
+
+    // https://mvnrepository.com/artifact/com.google.guava/guava
+    implementation("com.google.guava:guava:31.0.1-jre")
+
+
+
+}
+
+test {
+    useJUnitPlatform()
+}
